@@ -4,5 +4,11 @@
 **Username:** colin-rogers  
 **Primary Email:** colinrogers2790@gmail.com
 
-**Group Members:** Briana Avalos, Tien Che, William Lenon-Williams, Sal Rahimi  
+**Group Members:**     
+<ul>
+  <li>Briana Avalos</li>
+  <li>Tien Che</li>
+  <li>William Lenon-Williams</li>
+  <li>Sal Rahimi</li>
+</ul>
 **Group Name:** Horizon
