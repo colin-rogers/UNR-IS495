@@ -4,7 +4,7 @@
 **Username:** colin-rogers  
 **Primary Email:** colinrogers2790@gmail.com
 
-**Group Name:** Horizon
+**Group Name:** Horizon  
 **Group Members:**
 <ul>
   <li>Briana Avalos</li>
