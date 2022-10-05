@@ -1,4 +1,4 @@
-# IS 495.1001 - Fall 2022, Semester Project  
+# IS 495.1001 - Fall 2022 Semester Project  
 **Name:** Colin Rogers  
 **Class:** IS 495.1001    
 **Primary Email:** colinrogers2790@gmail.com  
