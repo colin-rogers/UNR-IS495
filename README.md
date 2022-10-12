@@ -4,6 +4,6 @@
 **Primary Email:** colinrogers2790@gmail.com  
 **School Email:** colinrogers@nevada.unr.edu  
 
-**Group Name:** Horizon  
+**Group Name:** *Horizon*  
 **Group Members:** Brianna Avalos, William Lenon-Williams, Sal Rahimi, Tien Che  
 **Project Link:** https://horizon-is495.atlassian.net/jira/software/projects/HOR/boards/1
