@@ -4,7 +4,7 @@
 **Primary Email:** colinrogers2790@gmail.com  
 **School Email:** colinrogers@nevada.unr.edu  
 
-**Name:** Sal Rahimi 
+**Name:** Sal Rahimi /n
 **Primary Email:** salrahimi0@gmail.com 
 
 **Group Name:** *Horizon*  
