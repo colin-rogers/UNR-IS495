@@ -20,7 +20,7 @@ CREATE TABLE Book (
   	PublisherID int,
 	
 	FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID),
-	FOREING KEY (GenreID) REFERENCES Genre(GenreID),
+	FOREIGN KEY (GenreID) REFERENCES Genre(GenreID),
 	FOREIGN KEY (PublisherID) REFERENCES Publisher(PublisherID)
 );
 
