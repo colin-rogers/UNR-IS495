@@ -36,3 +36,54 @@ CREATE TABLE BookRecord (
 	FOREIGN KEY (FineID) REFERENCES Fine(FineID),
 	FOREIGN KEY (UserID) REFERENCES User(UserID)
 );
+
+CREATE TABLE Genre (
+	GenreID int PRIMARY KEY,
+	Description varchar(255)
+);
+
+CREATE TABLE Employee (
+	EmployeeID int PRIMARY KEY,
+	FirstName varchar(255),
+	LastName varchar(255),
+	UserID int,
+	
+	FOREIGN KEY (UserID) REFERENCES Account(UserID)
+);
+
+CREATE TABLE Account (
+	Username varchar(255),
+	Password varchar(255),
+	TypeID int,
+	
+	FOREIGN KEY (TypeID) REFERENCES AccountType(TypeID)
+);
+
+CREATE TABLE AccountType (
+	TypeID int,
+	Description varchar(255)
+);
+
+CREATE TABLE Reservation (
+	ReservationID int,
+	UserID int,
+	CreationDate datetime,
+	StatusID int,
+	
+	FOREIGN KEY (UserID) REFERENCES Account(UserID),
+	FOREIGN KEY (StatusID) REFERENCES ReservationStatus(StatusID)
+);
+
+CREATE TABLE ReservationStatus (
+	StatusID int,
+	Description varchar(255)
+);
+
+CREATE TABLE Fine (
+	Amount money,
+	RecordID int,
+	RFID int,
+	
+	FOREIGN KEY (RecordID) REFERENCES BookRecord(RecordID),
+	FOREIGN KEY (RFID) REFERENCES Book(RFID)
+);
