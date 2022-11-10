@@ -52,6 +52,7 @@ CREATE TABLE Employee (
 );
 
 CREATE TABLE Account (
+	UserID int PRIMARY KEY,
 	Username varchar(255),
 	Password varchar(255),
 	TypeID int,
@@ -60,12 +61,12 @@ CREATE TABLE Account (
 );
 
 CREATE TABLE AccountType (
-	TypeID int,
+	TypeID int PRIMARY KEY,
 	Description varchar(255)
 );
 
 CREATE TABLE Reservation (
-	ReservationID int,
+	ReservationID int PRIMARY KEY,
 	UserID int,
 	CreationDate datetime,
 	StatusID int,
@@ -75,11 +76,12 @@ CREATE TABLE Reservation (
 );
 
 CREATE TABLE ReservationStatus (
-	StatusID int,
+	StatusID int PRIMARY KEY,
 	Description varchar(255)
 );
 
 CREATE TABLE Fine (
+	FineID int PRIMARY KEY,
 	Amount money,
 	RecordID int,
 	RFID int,
