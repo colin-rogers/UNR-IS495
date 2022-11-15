@@ -44,12 +44,22 @@ CREATE TABLE Genre (
 
 CREATE TABLE Employee (
 	EmployeeID int PRIMARY KEY,
+	UserID int,
 	FirstName varchar(255),
 	LastName varchar(255),
-	UserID int,
 	
 	FOREIGN KEY (UserID) REFERENCES Account(UserID)
 );
+
+CREATE TABLE Reader {
+	UserID int PRIMARY KEY,
+	FirstName varchar(255),
+	LastName varchar(255),
+	DOB datetime,
+	Address varchar(255),
+	
+	FOREIGN KEY (UserID) REFERENCES Account(UserID)
+};
 
 CREATE TABLE Account (
 	UserID int PRIMARY KEY,
