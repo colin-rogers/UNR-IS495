@@ -1,95 +1,66 @@
 CREATE TABLE Author (
-	AuthorID int PRIMARY KEY,
-	FirstName varchar(255),
-	LastName varchar(255)
+	AuthorID	char(6) PRIMARY KEY NOT NULL,
+	FirstName	varchar(20) NOT NULL,
+	LastName	varchar(30) NOT NULL
+);
+
+CREATE TABLE Genre (
+	GenreID			char(6) PRIMARY KEY NOT NULL,
+	GenreDescription	varchar(255) NOT NULL
 );
 
 CREATE TABLE Publisher (
-	PublisherID int PRIMARY KEY,
-	CompanyName varchar(255)
+	PublisherID	char(6) PRIMARY KEY NOT NULL,
+	CompanyName	varchar(100) NOT NULL
+);
+
+CREATE TABLE AccountType (
+	TypeID		char(6) PRIMARY KEY NOT NULL,
+	TypeDescription varchar(100) NOT NULL
+);
+
+CREATE TABLE Person (
+	UserID		char(6) PRIMARY KEY,
+	FirstName	varchar(20) NOT NULL,
+	LastName	varchar(30) NOT NULL,
+	UserPhone	char(15) NOT NULL,
+	UserAddress 	varchar(30) NOT NULL,
+	City		varchar(20) NOT NULL,
+	UserState	varchar(2) NOT NULL,
+	Zip			varchar(12)  NOT NULL
+);
+
+CREATE TABLE UserAccount (
+	UserID		char(6) PRIMARY KEY NOT NULL,
+	UserPassword	varchar(255) NOT NULL,
+	TypeID		char(6) NOT NULL,
+
+	FOREIGN KEY (UserID) REFERENCES Person(UserID),
+	FOREIGN KEY (TypeID) REFERENCES AccountType(TypeID)
 );
 
 CREATE TABLE Book (
-	RFID int PRIMARY KEY,
-	Title varchar(255),
-	Edition int,
-	Year int,
-  	AuthorID int,
-  	GenreID int,
-  	PublisherID int,
-	
+	RFID		char(6) NOT NULL PRIMARY KEY,
+	Title		varchar(255) NOT NULL,
+	Edition		char(2),
+	YearPublished	char(4) NOT NULL,
+	AuthorID	char(6) NOT NULL,
+	GenreID		char(6) NOT NULL,
+	PublisherID	char(6) NOT NULL,
+
 	FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID),
 	FOREIGN KEY (GenreID) REFERENCES Genre(GenreID),
 	FOREIGN KEY (PublisherID) REFERENCES Publisher(PublisherID)
 );
 
-CREATE TABLE BookRecord (
-  	RecordID int PRIMARY KEY,
-	CheckOutDate datetime,
-	ReturnDate datetime,
-	RFID int,
-	FineID int,
-  	UserID int
-	
+CREATE TABLE BookReservation (
+	RFID		char(6) NOT NULL,
+	UserID		char(6) NOT NULL,
+	CheckoutDate	datetime NOT NULL,
+	ReturnDate	datetime NOT NULL,
+
+	FOREIGN KEY (UserID) REFERENCES Person(UserID),
 	FOREIGN KEY (RFID) REFERENCES Book(RFID),
-	FOREIGN KEY (FineID) REFERENCES Fine(FineID),
-	FOREIGN KEY (UserID) REFERENCES User(UserID)
-);
-
-CREATE TABLE Genre (
-	GenreID int PRIMARY KEY,
-	Description varchar(255)
-);
-
-CREATE TABLE Employee (
-	EmployeeID int PRIMARY KEY,
-	UserID int,
-	FirstName varchar(255),
-	LastName varchar(255),
 	
-	FOREIGN KEY (UserID) REFERENCES Account(UserID)
-);
-
-CREATE TABLE Reader {
-	UserID int PRIMARY KEY,
-	FirstName varchar(255),
-	LastName varchar(255),
-	DOB datetime,
-	Address varchar(255),
-	
-	FOREIGN KEY (UserID) REFERENCES Account(UserID)
-};
-
-CREATE TABLE Account (
-	UserID int PRIMARY KEY,
-	Username varchar(255),
-	Password varchar(255),
-	TypeID int,
-	
-	FOREIGN KEY (TypeID) REFERENCES AccountType(TypeID)
-);
-
-CREATE TABLE AccountType (
-	TypeID int PRIMARY KEY,
-	Description varchar(255)
-);
-
-CREATE TABLE Reservation (
-	ReservationID int PRIMARY KEY,
-	UserID int,
-	CreationDate datetime,
-	StatusID int,
-	
-	FOREIGN KEY (UserID) REFERENCES Account(UserID),
-	FOREIGN KEY (StatusID) REFERENCES ReservationStatus(StatusID)
-);
-
-CREATE TABLE ReservationStatus (
-	StatusID int PRIMARY KEY,
-	Description varchar(255)
-);
-
-CREATE TABLE Fine (
-	FineID int PRIMARY KEY,
-	Amount money
+	PRIMARY KEY(RFID, CheckoutDate)
 );
