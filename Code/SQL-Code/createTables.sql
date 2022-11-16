@@ -20,7 +20,7 @@ CREATE TABLE AccountType (
 );
 
 CREATE TABLE Person (
-	UserID		char(6) PRIMARY KEY,
+	UserID		char(8) PRIMARY KEY,
 	FirstName	varchar(20) NOT NULL,
 	LastName	varchar(30) NOT NULL,
 	UserPhone	char(15) NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE Person (
 );
 
 CREATE TABLE UserAccount (
-	UserID		char(6) PRIMARY KEY NOT NULL,
+	UserID		char(8) PRIMARY KEY NOT NULL,
 	UserPassword	varchar(255) NOT NULL,
 	TypeID		char(6) NOT NULL,
 
@@ -55,7 +55,7 @@ CREATE TABLE Book (
 
 CREATE TABLE BookReservation (
 	RFID		char(6) NOT NULL,
-	UserID		char(6) NOT NULL,
+	UserID		char(8) NOT NULL,
 	CheckoutDate	datetime NOT NULL,
 	ReturnDate	datetime NOT NULL,
 
