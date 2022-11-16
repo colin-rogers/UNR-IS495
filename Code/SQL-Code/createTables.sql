@@ -1,21 +1,21 @@
 CREATE TABLE Author (
-	AuthorID	char(6) PRIMARY KEY NOT NULL,
+	AuthorID	char(4) PRIMARY KEY NOT NULL,
 	FirstName	varchar(20) NOT NULL,
 	LastName	varchar(30) NOT NULL
 );
 
 CREATE TABLE Genre (
-	GenreID			char(6) PRIMARY KEY NOT NULL,
+	GenreID			char(3) PRIMARY KEY NOT NULL,
 	GenreDescription	varchar(255) NOT NULL
 );
 
 CREATE TABLE Publisher (
-	PublisherID	char(6) PRIMARY KEY NOT NULL,
+	PublisherID	char(5) PRIMARY KEY NOT NULL,
 	CompanyName	varchar(100) NOT NULL
 );
 
 CREATE TABLE AccountType (
-	TypeID		char(3) PRIMARY KEY NOT NULL,
+	TypeID		char(1) PRIMARY KEY NOT NULL,
 	TypeDescription varchar(100) NOT NULL
 );
 
@@ -44,9 +44,9 @@ CREATE TABLE Book (
 	Title		varchar(255) NOT NULL,
 	Edition		char(2),
 	YearPublished	char(4) NOT NULL,
-	AuthorID	char(6) NOT NULL,
-	GenreID		char(6) NOT NULL,
-	PublisherID	char(6) NOT NULL,
+	AuthorID	char(4) NOT NULL,
+	GenreID		char(3) NOT NULL,
+	PublisherID	char(5) NOT NULL,
 
 	FOREIGN KEY (AuthorID) REFERENCES Author(AuthorID),
 	FOREIGN KEY (GenreID) REFERENCES Genre(GenreID),
