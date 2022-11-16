@@ -15,7 +15,7 @@ CREATE TABLE Publisher (
 );
 
 CREATE TABLE AccountType (
-	TypeID		char(6) PRIMARY KEY NOT NULL,
+	TypeID		char(3) PRIMARY KEY NOT NULL,
 	TypeDescription varchar(100) NOT NULL
 );
 
