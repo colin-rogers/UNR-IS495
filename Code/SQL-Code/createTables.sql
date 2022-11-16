@@ -32,7 +32,7 @@ CREATE TABLE Person (
 
 CREATE TABLE UserAccount (
 	UserID		char(8) PRIMARY KEY NOT NULL,
-	UserPassword	varchar(255) NOT NULL,
+	UserPassword	varchar(15) NOT NULL,
 	TypeID		char(6) NOT NULL,
 
 	FOREIGN KEY (UserID) REFERENCES Person(UserID),
