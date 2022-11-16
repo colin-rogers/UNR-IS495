@@ -92,10 +92,5 @@ CREATE TABLE ReservationStatus (
 
 CREATE TABLE Fine (
 	FineID int PRIMARY KEY,
-	Amount money,
-	RecordID int,
-	RFID int,
-	
-	FOREIGN KEY (RecordID) REFERENCES BookRecord(RecordID),
-	FOREIGN KEY (RFID) REFERENCES Book(RFID)
+	Amount money
 );
