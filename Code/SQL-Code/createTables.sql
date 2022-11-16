@@ -6,14 +6,14 @@ CREATE TABLE Author (
 
 CREATE TABLE Publisher (
 	PublisherID int PRIMARY KEY,
-	Name varchar(255),
-	YearPublished varchar(4)
+	CompanyName varchar(255)
 );
 
 CREATE TABLE Book (
 	RFID int PRIMARY KEY,
 	Title varchar(255),
 	Edition int,
+	Year int,
   	AuthorID int,
   	GenreID int,
   	PublisherID int,
