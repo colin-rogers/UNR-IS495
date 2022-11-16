@@ -42,7 +42,6 @@ CREATE TABLE UserAccount (
 CREATE TABLE Book (
 	RFID		char(6) NOT NULL PRIMARY KEY,
 	Title		varchar(255) NOT NULL,
-	Edition		char(2),
 	YearPublished	char(4) NOT NULL,
 	AuthorID	char(4) NOT NULL,
 	GenreID		char(3) NOT NULL,
