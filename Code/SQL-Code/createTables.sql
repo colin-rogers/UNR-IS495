@@ -6,8 +6,7 @@ CREATE TABLE Author (
 
 CREATE TABLE Publisher (
 	PublisherID int PRIMARY KEY,
-	FirstName varchar(255),
-	LastName varchar(255),
+	Name varchar(255),
 	YearPublished varchar(4)
 );
 
