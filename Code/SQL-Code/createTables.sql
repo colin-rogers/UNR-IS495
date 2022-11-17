@@ -27,13 +27,14 @@ CREATE TABLE Person (
 	UserAddress 	varchar(30) NOT NULL,
 	City		varchar(20) NOT NULL,
 	UserState	varchar(2) NOT NULL,
-	Zip			varchar(12)  NOT NULL
+	Zip		varchar(12)  NOT NULL
 );
 
 CREATE TABLE UserAccount (
 	UserID		char(8) PRIMARY KEY NOT NULL,
 	UserPassword	varchar(12) NOT NULL,
 	TypeID		char(6) NOT NULL,
+	Fine		money,
 
 	FOREIGN KEY (UserID) REFERENCES Person(UserID),
 	FOREIGN KEY (TypeID) REFERENCES AccountType(TypeID)
