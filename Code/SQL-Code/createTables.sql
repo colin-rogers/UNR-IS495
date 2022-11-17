@@ -34,7 +34,7 @@ CREATE TABLE UserAccount (
 	UserID		char(8) PRIMARY KEY NOT NULL,
 	UserPassword	varchar(12) NOT NULL,
 	TypeID		char(6) NOT NULL,
-	Fine		money,
+	FineAmount	money,
 
 	FOREIGN KEY (UserID) REFERENCES Person(UserID),
 	FOREIGN KEY (TypeID) REFERENCES AccountType(TypeID)
