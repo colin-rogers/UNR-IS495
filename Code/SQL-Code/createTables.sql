@@ -54,13 +54,13 @@ CREATE TABLE Book (
 );
 
 CREATE TABLE BookReservation (
-	RFID		char(6) NOT NULL,
 	UserID		char(8) NOT NULL,
 	CheckoutDate	datetime NOT NULL,
 	ReturnDate	datetime NOT NULL,
+	RFID		char(6) NOT NULL,
 
 	FOREIGN KEY (UserID) REFERENCES Person(UserID),
 	FOREIGN KEY (RFID) REFERENCES Book(RFID),
 	
-	PRIMARY KEY(RFID, CheckoutDate)
+	PRIMARY KEY(UserID, CheckoutDate)
 );
