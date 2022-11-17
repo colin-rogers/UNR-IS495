@@ -56,7 +56,7 @@ CREATE TABLE Book (
 CREATE TABLE BookReservation (
 	UserID		char(8) NOT NULL,
 	CheckoutDate	datetime NOT NULL,
-	ReturnDate	datetime NOT NULL,
+	ReturnDate	datetime,
 	RFID		char(6) NOT NULL,
 
 	FOREIGN KEY (UserID) REFERENCES Person(UserID),
